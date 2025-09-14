@@ -89,6 +89,13 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_controller.default_url_options = { host: "hotwire.trumenov.top", protocol: "https" }
+  config.action_mailer.default_url_options = { host: "hotwire.trumenov.top", protocol: "https" }
+  config.action_dispatch.trusted_proxies = [
+    IPAddr.new("127.0.0.1"), # localhost
+    IPAddr.new("::1"),       # ipv6 localhost
+  ]
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
