@@ -6,7 +6,7 @@ require 'capistrano/rails'
 require 'capistrano/bundler'
 # require 'capistrano/rvm'
 require "capistrano/rbenv"
-# require 'capistrano/secrets_yml'
+require 'capistrano/secrets_yml'
 
 require "capistrano/scm/git"
 require "whenever/capistrano"
