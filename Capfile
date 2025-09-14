@@ -9,7 +9,7 @@ require "capistrano/rbenv"
 require 'capistrano/secrets_yml'
 
 require "capistrano/scm/git"
-require "whenever/capistrano"
+# require "whenever/capistrano"
 
 install_plugin Capistrano::SCM::Git
 
