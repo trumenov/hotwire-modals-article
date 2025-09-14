@@ -9,6 +9,8 @@ require "capistrano/rbenv"
 # require 'capistrano/secrets_yml'
 
 require "capistrano/scm/git"
+require "whenever/capistrano"
+
 install_plugin Capistrano::SCM::Git
 
 require 'capistrano/puma'
@@ -18,7 +20,7 @@ install_plugin Capistrano::Puma
 # For a Digital Ocean deploy, 'Daemon' will work
 # Documentation: https://github.com/seuros/capistrano-puma
 # From the documentation: "If you using puma daemonized (not supported in Puma 5+)""
-install_plugin Capistrano::Puma::Daemon
+# install_plugin Capistrano::Puma::Daemon
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
