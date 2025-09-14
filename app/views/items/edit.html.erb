@@ -1,0 +1,13 @@
+<main class="container">
+  <%= link_to "Back to items", items_path %>
+
+  <%= turbo_frame_tag "modal" do %>
+    <h1 class="h3 modal-header">
+      Edit item [<%= @item.id %>] <%= @item.name %>
+    </h1>
+
+    <div class="modal-body">
+      <%= render "items/form", item: @item %>
+    </div>
+  <% end %>
+</main>

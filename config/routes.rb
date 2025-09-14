@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :items, only: [:index, :new, :create]
+  root to: 'application#root_page'
+  resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
 end

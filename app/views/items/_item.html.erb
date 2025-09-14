@@ -1,3 +1,13 @@
-<div class="border rounded p-3">
-  <%= item.name %>
+<div id="<%= dom_id item %>" class="border rounded p-3">
+  <div class="row">
+    <div class="col-8">
+      <%= item.name %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Edit",
+                    edit_item_path(item.id),
+                    class: "btn btn-secondary",
+                    data: { turbo_frame: "modal" } %>
+    </div>
+  </div>
 </div>

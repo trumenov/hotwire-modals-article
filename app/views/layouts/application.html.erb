@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HotwireModals</title>
+    <title>HotwireModals demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+        body {
+            min-width: 1200px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #aaa;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header a, header p {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: sticky;
+            bottom: 0;
+        }
+        footer a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+      </style>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <a style="position: absolute; margin-left: -260px;" href="/" title="Main page">
+        <img style="display: block; width: 45px; height: 45px;"src="/logo.svg" />
+      </a>
+      <h1>Hotwire modals demo</h1>
+      <p>Link to fork: </p> <a target="_blank" href="https://github.com/trumenov/hotwire-modals-article">https://github.com/trumenov/hotwire-modals-article</a>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
 
     <div
       class="modal"
@@ -25,5 +104,10 @@
         </div>
       </div>
     </div>
+    <footer>
+      <p>Official site: <a target="_blank" href="https://trumenov.top">https://trumenov.top</a> |
+      <a href="mailto:andrew.trumenov@gmail.com">andrew.trumenov@gmail.com</a> |
+      Telegram: <a href="https://t.me/AndrewTrumenov" target="_blank">@AndrewTrumenov</a></p>
+    </footer>
   </body>
 </html>
